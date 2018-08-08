@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Write to file baseline_image
+      lineinfile:
+        path: baseline_image
+        create: yes
+        state: present
+        regexp: '{{branch}}'
+        line: '{{branch}} {{commit}}'
